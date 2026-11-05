@@ -79,7 +79,7 @@ function unitsSection(ctx, withMap = false) {
     <h2 class="center">Nossas lojas</h2>
     <div class="units">
       ${ctx.units.map((u) => {
-        const q = encodeURIComponent(`${u.address}, ${u.neighborhood}, ${u.city}`);
+        const q = encodeURIComponent([u.address, u.neighborhood, u.city].filter(Boolean).join(', '));
         return `<div class="unit">
         ${withMap ? `<iframe class="unit-map" title="Mapa da ${esc(u.name)}" loading="lazy" src="https://www.google.com/maps?q=${q}&output=embed"></iframe>` : ''}
         <div class="unit-body">
