@@ -23,6 +23,6 @@ module.exports = {
   },
   // Lojas iniciais (podem ser editadas, adicionadas ou removidas no painel)
   units: [
-    { name: 'Bahia Autos', address: 'Endereço da loja', neighborhood: '', city: 'Cidade - UF', phone: '', whatsapp: '', hours_json: [...Array(5)].map(() => ({ open: '08:00', close: '18:00' })).concat([{ open: '08:00', close: '12:00' }, null]) }
+    { name: 'Bahia Autos', address: 'BR-230, sentido Cabedelo', neighborhood: '', city: 'João Pessoa - PB', phone: '(83) 98201-1688', whatsapp: '5583982011688', hours_json: [...Array(5)].map(() => ({ open: '08:00', close: '18:00' })).concat([{ open: '08:00', close: '12:00' }, null]) }
   ]
 };

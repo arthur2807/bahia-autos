@@ -179,6 +179,9 @@ function migrate(key, fn) {
   fn();
   db.prepare('INSERT INTO settings(key,value) VALUES(?,?)').run('mig_' + key, new Date().toISOString());
 }
+migrate('bahia_endereco_whatsapp', () => {
+  db.prepare("UPDATE units SET address='BR-230, sentido Cabedelo', city='João Pessoa - PB', phone='(83) 98201-1688', whatsapp='5583982011688' WHERE address='Endereço da loja'").run();
+});
 migrate('horarios_estruturados', () => {
   const seeds = require('./brand').units;
   for (const u of db.prepare("SELECT id, sort FROM units WHERE hours_json='' OR hours_json IS NULL").all()) {
